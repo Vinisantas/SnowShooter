@@ -10,7 +10,7 @@ while True:
     #check for all events e get all
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            print('janela fechou')
+            print('Quiting')
             pygame.quit() #Close Window 
             quit() #end pygame
             
