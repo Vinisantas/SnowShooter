@@ -13,16 +13,3 @@ class Game:
             menu = Menu(self.window)
             menu.run()
             pass
-
-
-
-            #check for all events e get all
-            #for event in pygame.event.get():
-            #if event.type == pygame.QUIT:
-                    #pygame.quit() #Close Window 
-                    #quit() #end pygame
-
-
-
-
-                
