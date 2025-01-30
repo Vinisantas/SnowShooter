@@ -17,6 +17,7 @@ class Menu:
         pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
         while True:
+            #DRAW IMAGES AND SELECTED COLOR AND FONTS FOR MENU
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(text_size=50, text="Snow", text_color=COLOR_RED , text_center_pos=((WIN_WIDTH / 2), 70))
             self.menu_text(text_size=50, text="Shooter", text_color=COLOR_RED , text_center_pos=((WIN_WIDTH / 2), 120))
@@ -26,22 +27,29 @@ class Menu:
                     self.menu_text(text_size=20, text=MENU_OPTION[i] , text_color=COLOR_YELLOW , text_center_pos=((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
                     self.menu_text(text_size=20, text=MENU_OPTION[i] , text_color=COLOR_WHITE , text_center_pos=((WIN_WIDTH / 2), 200 + 25 * i))
+            pygame.display.flip()
 
+            #END IMAGES
 
+            #INIT FOR THE EVENTS
             #check for all events e get all
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit() #Close Window 
                     quit() #end pygame
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:
-                        menu_option += 1
+                    if event.key == pygame.K_DOWN: #VERIFY PRESS THE KEY DOWN
                         if menu_option < len(MENU_OPTION) -1:
                             menu_option += 1
                         else:
                             menu_option = 0
-
-            pygame.display.flip()
+                    if event.key == pygame.K_UP: #VERIFY PRESS THE KEY UP
+                        if menu_option > 0:
+                            menu_option -= 1
+                        else:
+                            menu_option =  len(MENU_OPTION) -1
+                    if event.key == pygame.K_RETURN: #VERIFY PRESS THE ENTER
+                        return MENU_OPTION[menu_option]
 
 
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
