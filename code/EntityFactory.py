@@ -1,6 +1,6 @@
 import random
 
-from code.background import Background
+from code.Background import Background
 from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.Player import Player
 from code.Enemy import Enemy
