@@ -3,7 +3,7 @@ import sys
 from tkinter.font import Font
 import pygame
 import pygame.display
-from code.Const import COLOR_WHITE, EVENT_ENEMY, MENU_OPTION, SPAWN_TIME, WIN_HEIGHT
+from code.Const import C_CYAN, C_GREEN, C_WHITE, EVENT_ENEMY, MENU_OPTION, SPAWN_TIME, WIN_HEIGHT
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
@@ -39,6 +39,13 @@ class Level:
                     shoot = ent.shoot()
                     if shoot is not None:
                         self.entity_list.append(shoot)
+                if ent.name == 'Player1':
+                    self.level_text(text_size=14, text=f'Player1 - Health: {ent.health} | Score: {ent.score}', text_color=C_GREEN, text_pos=(10, 25))
+                if ent.name == 'Player2':
+                    self.level_text(text_size=14, text=f'Player2 - Health: {ent.health} | Score: {ent.score}', text_color=C_CYAN, text_pos=(10, 45))
+
+
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -47,10 +54,13 @@ class Level:
                     choice = random.choice(('Enemy1', 'Enemy2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
             
+
+
+            
             #printed text
-            self.level_text(text_size=14, text=f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s' , text_color=COLOR_WHITE, text_pos=(10, 5))
-            self.level_text(text_size=14, text=f'fps: {clock.get_fps() :.0f}', text_color=COLOR_WHITE, text_pos=(10, WIN_HEIGHT - 35))
-            self.level_text(text_size=14, text=f'entidades: {len(self.entity_list)}', text_color=COLOR_WHITE, text_pos=(10, WIN_HEIGHT - 20))
+            self.level_text(text_size=14, text=f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s' , text_color=C_WHITE, text_pos=(10, 5))
+            self.level_text(text_size=14, text=f'fps: {clock.get_fps() :.0f}', text_color=C_WHITE, text_pos=(10, WIN_HEIGHT - 35))
+            self.level_text(text_size=14, text=f'entidades: {len(self.entity_list)}', text_color=C_WHITE, text_pos=(10, WIN_HEIGHT - 20))
             pygame.display.flip()
 
             #Collisions
@@ -65,3 +75,4 @@ class Level:
             text_suf: pygame.Surface = text_font.render(text, True, text_color).convert_alpha() 
             text_rect: pygame.Rect = text_suf.get_rect(left=text_pos[0], top=text_pos[1])
             self.window.blit(source=text_suf, dest=text_rect)
+
