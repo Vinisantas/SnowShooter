@@ -1,6 +1,6 @@
 from code.EnemyShot import EnemyShot
 from code.Entity import Entity
-from code.Const import ENTITY_SHOT_DELAY, ENTITY_SPEED, WIN_WIDTH
+from code.Const import ENTITY_SHOT_DELAY, ENTITY_SPEED
 
 class Enemy(Entity):
     def __init__(self, name = str, position = tuple):
