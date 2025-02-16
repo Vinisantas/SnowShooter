@@ -1,7 +1,7 @@
 from tkinter.font import Font
 from pygame import Rect, Surface
 import pygame.image
-from code.Const import COLOR_RED, COLOR_WHITE, COLOR_YELLOW, MENU_OPTION, WIN_WIDTH
+from code.Const import C_ORANGE, C_WHITE, C_YELLOW, MENU_OPTION, WIN_WIDTH
 
 
 class Menu:
@@ -19,14 +19,14 @@ class Menu:
         while True:
             #DRAW IMAGES AND SELECTED COLOR AND FONTS FOR MENU
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(text_size=50, text="Snow", text_color=COLOR_RED , text_center_pos=((WIN_WIDTH / 2), 70))
-            self.menu_text(text_size=50, text="Shooter", text_color=COLOR_RED , text_center_pos=((WIN_WIDTH / 2), 120))
+            self.menu_text(text_size=50, text="Snow", text_color=C_ORANGE , text_center_pos=((WIN_WIDTH / 2), 70))
+            self.menu_text(text_size=50, text="Shooter", text_color=C_ORANGE , text_center_pos=((WIN_WIDTH / 2), 120))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(text_size=20, text=MENU_OPTION[i] , text_color=COLOR_YELLOW , text_center_pos=((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(text_size=20, text=MENU_OPTION[i] , text_color=C_YELLOW , text_center_pos=((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
-                    self.menu_text(text_size=20, text=MENU_OPTION[i] , text_color=COLOR_WHITE , text_center_pos=((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(text_size=20, text=MENU_OPTION[i] , text_color=C_WHITE , text_center_pos=((WIN_WIDTH / 2), 200 + 25 * i))
             pygame.display.flip()
 
             #END IMAGES
