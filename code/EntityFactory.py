@@ -14,9 +14,15 @@ class EntityFactory:
         match entity_name:
             case 'Level1Bg':
                 list_bg = []
-                for i in range(7):
+                for i in range(7): #level1 images number
                     list_bg.append(Background(name=f'Level1Bg{i}', position=(0, 0)))
                     list_bg.append(Background(name=f'Level1Bg{i}', position=(WIN_WIDTH, 0)))
+                return list_bg
+            case 'Level2Bg':
+                list_bg = []
+                for i in range(5): #level2 images number
+                    list_bg.append(Background(name=f'Level2Bg{i}', position=(0, 0)))
+                    list_bg.append(Background(name=f'Level2Bg{i}', position=(WIN_WIDTH, 0)))
                 return list_bg
             case 'Player1':
                 return Player(name='Player1', position=(10, WIN_HEIGHT / 2 - 30))

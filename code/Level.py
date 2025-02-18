@@ -3,7 +3,7 @@ import sys
 from tkinter.font import Font
 import pygame
 import pygame.display
-from code.Const import C_CYAN, C_GREEN, C_WHITE, EVENT_ENEMY, MENU_OPTION, SPAWN_TIME, WIN_HEIGHT
+from code.Const import C_CYAN, C_GREEN, C_WHITE, EVENT_ENEMY, EVENT_TIMEOUT, MENU_OPTION, SPAWN_TIME, TIMEOUT_LEVEL, TIMEOUT_STEP, WIN_HEIGHT
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
@@ -13,16 +13,17 @@ from code.Player import Player
 
 class Level:
     def __init__(self, window, name, game_mode):
-        self.timeout = 2000 #20 segundos
+        self.timeout = TIMEOUT_LEVEL #20 segundos
         self.window = window
         self.name = name
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
-        self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
+        self.entity_list.extend(EntityFactory.get_entity(self.name + 'Bg'))
         self.entity_list.append(EntityFactory.get_entity('Player1'))
         if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
         pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME)
+        pygame.time.set_timer(EVENT_TIMEOUT, TIMEOUT_STEP) #100ms
 
         
 
@@ -53,8 +54,18 @@ class Level:
                 if event.type == EVENT_ENEMY:
                     choice = random.choice(('Enemy1', 'Enemy2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
+                if event.type == EVENT_TIMEOUT:
+                    self.timeout -= TIMEOUT_STEP
+                    if self.timeout == 0:
+                        return True
             
-
+                found_player = False
+                for ent in self.entity_list:
+                    if isinstance(ent, Player):
+                        found_player = True
+                        
+                if not found_player:
+                    return False
 
             
             #printed text
@@ -66,9 +77,6 @@ class Level:
             #Collisions
             EntityMediator.verify_collision(entity_list=self.entity_list)
             EntityMediator.verify_health(entity_list=self.entity_list)
-
-
-        pass
 
     def level_text(self, text_size= int, text= str, text_color= tuple, text_pos= tuple):
             text_font: Font = pygame.font.SysFont(name='Lucida Sans Typewriter', size=text_size)
