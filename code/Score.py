@@ -1,6 +1,6 @@
 from tkinter.font import Font
 import pygame
-from code.Const import C_YELLOW, SCORE_POS
+from code.Const import C_YELLOW, MENU_OPTION, SCORE_POS
 
 
 class Score:
