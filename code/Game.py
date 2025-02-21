@@ -2,7 +2,7 @@ import pygame
 from code.Const import MENU_OPTION, WIN_HEIGHT, WIN_WIDTH
 from code.Level import Level
 from code.Menu import Menu
-from code.score import Score
+from code.Score import Score
 
 class Game:
     def __init__(self):
