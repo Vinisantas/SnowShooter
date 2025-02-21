@@ -10,12 +10,14 @@ class Score:
         self.surf = pygame.image.load('./asset/ScoreBg.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
-    def save(self, menu_return: str, player_score: list[int]):
+     def save(self, game_mode: str, player_score: list[int]):
         pygame.mixer_music.load('./asset/Score.mp3')
         pygame.mixer_music.play(-1)
         self.window.blit(source=self.surf, dest=self.rect)
         while True:
             self.score_text(text_size=48, text='YOU WINN!!', text_color=C_YELLOW, text_center_pos=SCORE_POS['Title'])
+            if game_mode == MENU_OPTION[0]:
+                text = 'Player 1 enter your name(4 characteres):'
             pygame.display.flip()
             pass
 
