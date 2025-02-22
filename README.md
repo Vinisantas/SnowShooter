@@ -1,46 +1,63 @@
-# Snow Shooter
+Snow Shooter
+Um jogo desenvolvido durante as aulas práticas de Análise e Desenvolvimento de Sistemas (ADS) na instituição Uninter, utilizando Python e Pygame.
+O objetivo do jogo é abater naves inimigas e acumular pontos. Ele pode ser jogado no modo:
 
-Fiz um jogo durante as aulas práticas de ADS da Instituição Unninter
-Feito com python e ultilizado pygame para toda a lógica do game,
-o intuito do jogo é abater as naves inimigos e fazer score onde tem a possibilidade
-de jogar com 1 player ou com 2 player tanto cooperative quanto competitive
-O escore é salvo em um arquivo de banco de dados ultilizando SQlite3
+1 jogador: desafie a si mesmo.
+2 jogadores: escolha entre cooperativo ou competitivo.
+O placar de pontuações é salvo em um banco de dados local usando SQLite3.
 
----
+🚀 Demonstração
+![Vídeo sem título ‐ Feito com o Clipchamp](https://github.com/user-attachments/assets/55211122-2569-49a7-95bc-9533622a33c2)
+![image](https://github.com/user-attachments/assets/21cf5517-c9f5-44be-a12d-e643faac099e)
+![image](https://github.com/user-attachments/assets/0131ba67-12e9-44b0-9ed6-16742014f0c6)
 
-## 📸 Demonstração
+🛠️ Tecnologias Utilizadas
+Este projeto foi desenvolvido com:
 
+Python: para toda a lógica do jogo.
+Pygame: biblioteca para desenvolvimento de jogos.
+SQLite3: banco de dados para salvar as pontuações.
 
-![Vídeo sem título ‐ Feito com o Clipchamp](https://github.com/user-attachments/assets/a7862020-0282-4f80-b973-999b8c647b2e)
+📦 Instalação
+Pré-requisitos:
+Tenha o Python instalado em sua máquina.
+Baixe aqui caso necessário.
+Como rodar o jogo:
+Clone o repositório:
+bash
+Copiar código
+git clone https://github.com/Vinisantas/SnowShooter.git
 
+Instale as dependências:
+bash
+Copiar código
+pip install pygame
+Execute o jogo:
+bash
+Copiar código
+python main.py
 
-![image](https://github.com/user-attachments/assets/93549d06-781b-40f2-9b6e-095a2415dca5)
-![image](https://github.com/user-attachments/assets/5f3d1eed-6b05-4d69-8d69-ab78fea13bda)
-![image](https://github.com/user-attachments/assets/e1f5fbc4-461a-4fb8-8c6c-0fa121e1d601)
+🤝 Como Contribuir
+Contribuições são bem-vindas! Siga os passos abaixo:
 
+Faça um fork do repositório.
+Crie uma branch com sua feature:
+bash
+Copiar código
+git checkout -b minha-feature
+Faça o commit das alterações:
+bash
+Copiar código
+git commit -m 'feat: Adicionei uma nova feature'
+Envie para o repositório principal:
+bash
+Copiar código
+git push origin minha-feature
+Abra um pull request.
 
+📩 Contato
+Para dúvidas ou sugestões, entre em contato:
 
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- Python
-- Pygame
-- SQlite
-
----
-
-## 📦 Instalação
-
-**Pré-requisitos**:
-- Python instalado em sua máquina
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Vinisantas/SnowShooter.git
-   
-## Contribua
-1. Faça um fork
-2. Crie uma branch com a feature: git checkout -b minha-feature
-3. Envie um pull request
-
+Autor: Vinícius Santana
+GitHub: github.com/Vinisantas
+Email: viniciuspereirasantana@gmail.com
