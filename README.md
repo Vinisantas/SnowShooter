@@ -1,11 +1,15 @@
 # **Snow Shooter**
 
                                             
-Um jogo desenvolvido durante as aulas práticas de Análise e Desenvolvimento de Sistemas (ADS) na instituição Uninter, utilizando Python e Pygame.
-O objetivo do jogo é abater naves inimigas e acumular pontos. Ele pode ser jogado no modo:
+Um jogo desenvolvido durante as aulas práticas de Análise e Desenvolvimento de Sistemas (ADS) na instituição Uninter, 
+utilizando Python e Pygame.
+O objetivo do jogo é abater naves inimigas e acumular pontos.
+Ele pode ser jogado no modo:
 
 1 jogador: desafie a si mesmo.
+
 2 jogadores: escolha entre cooperativo ou competitivo.
+
 O placar de pontuações é salvo em um banco de dados local usando SQLite3.
 
 
@@ -20,27 +24,27 @@ O placar de pontuações é salvo em um banco de dados local usando SQLite3.
 Este projeto foi desenvolvido com:
 
 Python: para toda a lógica do jogo.
+
 Pygame: biblioteca para desenvolvimento de jogos.
+
 SQLite3: banco de dados para salvar as pontuações.
 
    # **📦instalação**
                                   
 Pré-requisitos:
 Tenha o Python instalado em sua máquina.
+
 Baixe aqui caso necessário.
+
 Como rodar o jogo:
+
 Clone o repositório:
-bash
-Copiar código
 git clone https://github.com/Vinisantas/SnowShooter.git
 
 Instale as dependências:
-bash
-Copiar código
 pip install pygame
+
 Execute o jogo:
-bash
-Copiar código
 python main.py
 
   # **🤝Como Contribuir**
