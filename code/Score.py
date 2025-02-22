@@ -21,6 +21,8 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.score_text(text_size=48, text='YOU WINN!!', text_color=C_YELLOW, text_center_pos=SCORE_POS['Title'])
+            text = 'Enter Player 1 name (4 characters):'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
                 text = 'Player 1 enter name(4 characteres):'

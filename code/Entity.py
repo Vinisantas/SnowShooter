@@ -20,5 +20,5 @@ class Entity(ABC):
 
     #METHODS IMPLEMENTS OF THE CHILDREN
     @abstractmethod #decoretor
-    def move(self, ):
+    def move(self):
         pass
