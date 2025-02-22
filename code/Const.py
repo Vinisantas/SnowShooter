@@ -139,7 +139,7 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 
 
 #S
-SPAWN_TIME = 3000
+SPAWN_TIME = 2000
 
 
 
